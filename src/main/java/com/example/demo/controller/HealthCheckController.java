@@ -22,7 +22,7 @@ public class HealthCheckController {
     @Value("${serverName}")
     private String serverName;
 
-    @GetMapping("/api/hc") //
+    @GetMapping("/hc") //
     public ResponseEntity<?> healthCheck() {
         Map<String, String> responseData = new TreeMap<>();
         responseData.put("serverName", serverName);
@@ -34,7 +34,7 @@ public class HealthCheckController {
         return ResponseEntity.ok(responseData);
     }
 
-    @GetMapping("/api/env")
+    @GetMapping("/env")
     public ResponseEntity<?> getEnv() {
         return ResponseEntity.ok(env);
     }
